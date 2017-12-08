@@ -1,0 +1,122 @@
+* { margin: 0; padding: 0; box-sizing: border-box; outline: 1px solid transparent; -webkit-backface-visibility: hidden; }
+*:focus, *:active:focus { outline: none; }
+
+html { overflow-x: hidden; }
+body { min-height: 100vh; }
+main { height: 100vh; }
+button { background: none; border: none; cursor: pointer; }
+img { max-size: 100%; }
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Transition */
+.running .top-container { transform: translateY(-20px); }
+.running .canvas { transform: scale(1,1); opacity: .5; }
+.running .logo-happy { opacity: 1; }
+.running .logo-sleepy { opacity: 0; }
+
+.running .stats-container li strong { color: #000; }
+.running .stats-container li span { color: #00c752; }
+
+.running .mining-start { display: none; }
+.running .mining-stop { display: initial; }
+
+.stopped .mining-start { display: initial; }
+.stopped .mining-stop { display: none; }
+
+
+/* TOP
+*************************************/
+.section-top { background: #eceff1; border-bottom: 1px solid #cfd8dc; position: relative; }
+.top-container { transform: translateY(0); will-change: transform; transition: .22s ease-in-out; position: relative; z-index: 1; }
+
+/* Emoji Face */
+.logo-container { position: relative; }
+.logo { will-change: transform; transition: .22s ease-in-out; background: #eceff1; border-radius: 100%; transform: scale(.9,.9); }
+.logo-happy { will-change: opacity; transition: .22s ease-in-out; position: absolute; top: 0; left: 0; opacity: 0; }
+.logo-sleepy { will-change: opacity; transition: .22s ease-in-out; position: absolute; top: 0; left: 0; opacity: .25; }
+
+
+/* Stats */
+.stats-container { list-style: none; width: 160px; }
+.stats-container li strong { font-size: 12px; font-weight: 400; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .22s ease-in-out; }
+.stats-container li i { height: 1px; background: #cfd8dc; margin: 0 4px; }
+.stats-container li span { font-size: 24px; font-weight: 900; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .22s ease-in-out; }
+
+/* FAB Button */
+.section-top .button-fab { position: absolute; top: calc(100% - 25px); right: 5%; border-radius: 100%; background: white; border: 1px solid #cfd8dc; width: 50px; height: 50px; }
+.section-top .button-fab .material-icons { font-size: 32px; color: white; background: black; z-index: 0; border-radius: 100%; }
+.section-top .button-fab .material-icons:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    border: 6px solid white;
+}
+
+/* Canvas */
+.canvas-fixed { z-index: 0; position: absolute; bottom: 0; right: 0; left: 0; width: 100%; height: 100px; }
+
+.canvas { 
+    width: 600px;
+    height: 101px;
+    transform-origin: bottom; 
+    opacity: 0.25; 
+    will-change: transform; 
+    transform: scale(1,0);
+    transition: .22s ease-in-out; }
+
+
+/* BOTTOM
+*************************************/
+.section-bot {  }
+
+/* Title */
+h1 { font-weight: 900; white-space: nowrap; }
+h1 span { white-space: nowrap; }
+h1 span i { font-style: normal; position: relative; display: inline-block; }
+h1 span i:before,
+h1 span i:after { content: ""; display: block; width: 100%; height: 14px; background: black; position: absolute; top: calc(100% - 8px); opacity: .5; }
+
+/* Me */
+h1 span i.me:before { background: #00c752; }
+h1 span i.me:after { background: #00c752; transform: rotate(7deg) translateX(5px); }
+
+/* You */
+h1 span i.you:before { background: #ffeb3a; }
+h1 span i.you:after { background: #ffeb3a; transform: rotate(7deg) translateX(5px); }
+
+
+/* START MINING BUTTON
+*************************************/
+.mining-button { background: #00c752; border: none; border-radius: 100px; padding: 12px 0; color: white; font-weight: 600; width: 100%; }
+.mining-button .material-icons { color: rgba(0,0,0,.5); margin: 0 1rem; font-size: 56px; }
+
+
+/* DEVICES
+*************************************/
+@media (min-width: 0) and (max-width: 768px) {
+    h1 span i:before,
+    h1 span i:after { height: 14px; top: calc(100% - 8px); }
+    .mining-button .material-icons { font-size: 48px; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 span i:before,
+    h1 span i:after { height: 18px; top: calc(100% - 8px); }
+    .mining-button .material-icons { font-size: 56px; }
+}
+
+@media (min-width: 1025px) {
+    h1 span i:before,
+    h1 span i:after { height: 20px; top: calc(100% - 8px); }
+    .mining-button .material-icons { font-size: 56px; }
+}
