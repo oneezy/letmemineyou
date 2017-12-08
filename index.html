@@ -86,7 +86,7 @@
             <section class="flex-vertical flex-2 center-center padding-1 section-bot">
                 
                 <!-- Title -->
-                <h1 class="margin-y-2 mobile-text-64 tablet-text-96 desktop-text-112">
+                <h1 class="margin-y-1 mobile-text-64 tablet-text-96 desktop-text-112">
                     <span class="mobile-block">Let <i class="me">ME </i></span>
                     <span class="mobile-block">Mine <i class="you">YOU</i>.</span>
                 </h1>
