@@ -114,8 +114,8 @@
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="lib/miner.min.js"></script>
-        <script src="lib/miner-ui.min.js"></script>
+        <script src="lib/letmemineyou.min.js"></script>
+        <script src="lib/letmemineyou-ui.min.js"></script>
 
         <script>
             var miner = null;
