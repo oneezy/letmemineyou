@@ -33,20 +33,20 @@ img { max-size: 100%; }
 /* TOP
 *************************************/
 .section-top { background: #eceff1; border-bottom: 1px solid #cfd8dc; position: relative; }
-.top-container { transform: translateY(0); will-change: transform; transition: .22s ease-in-out; position: relative; z-index: 1; }
+.top-container { transform: translateY(0); will-change: transform; transition: .32s ease-in-out; position: relative; z-index: 1; }
 
 /* Emoji Face */
 .logo-container { position: relative; }
-.logo { will-change: transform; transition: .22s ease-in-out; background: #eceff1; border-radius: 100%; transform: scale(.9,.9); }
-.logo-happy { will-change: opacity; transition: .22s ease-in-out; position: absolute; top: 0; left: 0; opacity: 0; }
-.logo-sleepy { will-change: opacity; transition: .22s ease-in-out; position: absolute; top: 0; left: 0; opacity: .25; }
+.logo { will-change: transform; transition: .32s ease-in-out; background: #eceff1; border-radius: 100%; transform: scale(.9,.9); }
+.logo-happy { will-change: opacity; transition: .32s ease-in-out; position: absolute; top: 0; left: 0; opacity: 0; }
+.logo-sleepy { will-change: opacity; transition: .32s ease-in-out; position: absolute; top: 0; left: 0; opacity: .25; }
 
 
 /* Stats */
 .stats-container { list-style: none; width: 160px; }
-.stats-container li strong { font-size: 12px; font-weight: 400; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .22s ease-in-out; }
+.stats-container li strong { font-size: 12px; font-weight: 400; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .32s ease-in-out; }
 .stats-container li i { height: 1px; background: #cfd8dc; margin: 0 4px; }
-.stats-container li span { font-size: 24px; font-weight: 900; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .22s ease-in-out; }
+.stats-container li span { font-size: 24px; font-weight: 900; text-transform: uppercase; color: #cfd8dc; will-change: color; transition: .32s ease-in-out; }
 
 /* FAB Button */
 .section-top .button-fab { position: absolute; top: calc(100% - 25px); right: 5%; border-radius: 100%; background: white; border: 1px solid #cfd8dc; width: 50px; height: 50px; }
@@ -72,7 +72,7 @@ img { max-size: 100%; }
     opacity: 0.25; 
     will-change: transform; 
     transform: scale(1,0);
-    transition: .22s ease-in-out; }
+    transition: .32s ease-in-out; }
 
 
 /* BOTTOM
@@ -97,7 +97,11 @@ h1 span i.you:after { background: #ffeb3a; transform: rotate(7deg) translateX(5p
 
 /* START MINING BUTTON
 *************************************/
-.mining-button { background: #00c752; border: none; border-radius: 100px; padding: 12px 0; color: white; font-weight: 600; width: 100%; }
+.mining-stop .mining-button,
+.mining-start .mining-button { background: #00c752; border: none; border-radius: 100px; padding: 12px 0; color: white; font-weight: 600; width: 100%; will-change: opacity transform; transition: .32s ease-in-out; }
+
+.mining-start .mining-button { opacity: .74; }
+.mining-start .mining-button:hover { opacity: 1; }
 .mining-button .material-icons { color: rgba(0,0,0,.5); margin: 0 1rem; font-size: 56px; }
 
 
